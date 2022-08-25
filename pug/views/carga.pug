@@ -1,0 +1,17 @@
+include partials/head.pug
+include partials/navBar.pug
+div(class="container-sm")
+      h1(class="text-bg-secondary p-3") Plantilla carga producto con pug
+      div 
+        form(method='POST' action="/api/productos" enctype="application/x-www-form-urlencoded")
+            div(class='mb-3')
+                label(class='form-label') Producto:
+                input(class='form-control' id='title' name='title')
+            div(class='mb-3')
+                labe(class='form-label') Precio:
+                input(class='form-control' id='price' name='price')
+            div(class='mb-3')
+                label(class='form-label') URL foto producto:
+                input(class='form-control' id='thumbnail' name='thumbnail')
+            button(type='submit' class='btn btn-primary') Guardar
+script(src="/public/guardar.js")

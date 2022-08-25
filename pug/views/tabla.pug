@@ -1,0 +1,22 @@
+include partials/head.pug
+include partials/navBar.pug
+div(class='container mt-5')
+    div(class='row')
+    h2 Listado de productos
+        div(class='col')
+            table(class='table')
+                thead(class='table-dark')
+                    th ID
+                    th Nombre
+                    th Precio
+                    th Imagen
+                tbody
+                    each producto in lista
+                        tr
+                            td= producto.id 
+                            td= producto.title
+                            td= `${producto.price}`
+                            td
+                                img(src=producto.thumbnail height='70px')
+                    else
+                        h1 No hay productos cargados    

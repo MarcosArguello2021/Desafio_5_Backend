@@ -1,0 +1,42 @@
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <title>Desafio 5: EJS</title>
+    </head>
+    <body>
+        <%- include('partials/navBar') %>
+        <div class='container mt-5'>
+            <div class='row'>
+                <h2>Listado de productos</h2>
+                <div class='col'>
+                    <table class='table'>
+                        <thead class='table-dark'>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Imagen</th>
+                        </thead>
+                        <tbody>
+                            <% if(lista === null){ %>    
+                                <h2>No hay productos cargados</h2> 
+                            <% } else { %>
+                                      <% lista.forEach(producto => { %>
+                                        <tr>
+                                            <td> <%= producto.id %> </td>
+                                            <td> <%= producto.title %> </td>
+                                            <td> $<%= producto.price %> </td>
+                                            <td> <img src="<%= producto.thumbnail %>" height="70px"> </td>
+                                        </tr>
+                                      <% }) %>
+                            <% } %>
+        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

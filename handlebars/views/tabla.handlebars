@@ -1,0 +1,31 @@
+{{> navBar }}
+<div class='container mt-5'>
+    <div class='row'>
+        <h2>Listado de productos</h2>
+        <div class='col'>
+            {{#if listExists}}
+            <table class='table'>
+                <thead class='table-dark'>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                </thead>
+                <tbody>
+                    {{#each lista}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{title}}</td>
+                        <td>${{price}}</td>
+                        <td><img src="{{thumbnail}}" height="70px"></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{else}}
+            <h2>No hay productos</h2>>
+            {{/if}}
+
+        </div>
+    </div>
+</div>
